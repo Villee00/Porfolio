@@ -49,7 +49,7 @@ const Navigation = () => {
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id="appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -68,7 +68,9 @@ const Navigation = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography color="text.primary" textAlign="center">
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -85,7 +87,7 @@ const Navigation = () => {
                 <Link key={page} to={page} smooth={true} duration={400}>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ color: 'black', display: 'block' }}
+                    sx={{ color: 'text.primary', display: 'block' }}
                   >
                     {page}
                   </Button>

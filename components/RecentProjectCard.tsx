@@ -24,7 +24,7 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
       <CardMedia sx={{ width: 200 }}>
         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
           <Image
-            src={pic}
+            src={`/${repo.name.replace('-', '')}.png`}
             alt="Project screenshot"
             layout="fill"
             objectFit="cover"

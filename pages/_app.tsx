@@ -1,8 +1,49 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import {
+  createTheme,
+  CssBaseline,
+  PaletteMode,
+  ThemeProvider,
+} from '@mui/material';
+import { createContext, useMemo, useState } from 'react';
+import Head from 'next/head';
+
+const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [mode, setMode] = useState<'light' | 'dark'>('dark');
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    []
+  );
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode]
+  );
+  return (
+    <>
+      <Head>
+        <link rel="shortcut icon" href="/Avatar.png" />
+      </Head>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

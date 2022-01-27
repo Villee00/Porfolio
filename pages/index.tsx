@@ -16,6 +16,7 @@ import { GithubRepo } from '../types';
 import Navigation from '../components/Navigation';
 import RecentProjectCard from '../components/RecentProjectCard';
 import Footer from '../components/Footer';
+import Info from '../components/Info';
 
 const recentProjects = ['Villee00/F1-history', 'Villee00/Porfolio'];
 export const getStaticProps: GetStaticProps = async () => {
@@ -47,12 +48,12 @@ interface propsRepos {
 const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
   return (
     <>
-      <Navigation />
       <Container
         maxWidth="lg"
         sx={{
           justifyContent: 'center',
           textAlign: 'center',
+          bgcolor: 'background.default',
         }}
       >
         <Box
@@ -76,9 +77,9 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
               borderColor: 'secondary.main',
               borderWidth: 4,
             }}
-            src="https://avatars.githubusercontent.com/u/22426370"
+            src="/Avatar.png"
           />
-          <Typography variant="h4" component="h1">
+          <Typography variant="h4" component="h1" color="text.primary">
             Ville Haapamäki
           </Typography>
           <Box>
@@ -94,10 +95,14 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
             </Link>
           </Box>
           <Box>
-            <Typography variant="h5" component="h2">
-              Fullstack developer
+            <Typography variant="h5" component="h2" color="text.primary">
+              Software developer student year 2 at Metropolia UAS
             </Typography>
           </Box>
+        </Box>
+        <Navigation />
+        <Box>
+          <Info />
         </Box>
         <Box id="Projects" component={Paper} elevation={2} sx={{ mb: 2 }}>
           <Typography variant="h2" component="h3">
