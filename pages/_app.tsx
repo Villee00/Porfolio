@@ -3,45 +3,33 @@ import type { AppProps } from 'next/app';
 import {
   createTheme,
   CssBaseline,
-  PaletteMode,
   ThemeProvider,
+  useMediaQuery,
 } from '@mui/material';
-import { createContext, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Head from 'next/head';
 
-const ColorModeContext = createContext({ toggleColorMode: () => {} });
-
 function MyApp({ Component, pageProps }: AppProps) {
-  const [mode, setMode] = useState<'light' | 'dark'>('dark');
-  const colorMode = useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    []
-  );
-
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = useMemo(
     () =>
       createTheme({
         palette: {
-          mode,
+          mode: prefersDarkMode ? 'dark' : 'light',
         },
       }),
-    [mode]
+    [prefersDarkMode]
   );
+
   return (
     <>
       <Head>
         <link rel="icon" href="/icon.png" />
       </Head>
-      <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </ColorModeContext.Provider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

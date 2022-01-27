@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from 'next/link';
@@ -17,16 +17,11 @@ import Navigation from '../components/Navigation';
 import RecentProjectCard from '../components/RecentProjectCard';
 import Footer from '../components/Footer';
 import Info from '../components/Info';
-import { Timeline } from '@mui/lab';
-import TimelineSingle from '../components/TimelineSingle';
 
 const recentProjects = ['Villee00/F1-history', 'Villee00/Porfolio'];
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
-    'https://api.github.com/users/Villee00/repos?sort=created',
-    {
-      Accept: 'application/vnd.github.v3+json',
-    }
+    'https://api.github.com/users/Villee00/repos?sort=created&accept=application/vnd.github.v3+json'
   );
   const data: GithubRepo[] = await res.json();
   const recentRepos = data.filter((repo) =>
@@ -47,7 +42,10 @@ interface propsRepos {
   recentRepos: GithubRepo[];
   otherRepos: GithubRepo[];
 }
-const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
+const Home: React.FC<propsRepos> = ({
+  recentRepos,
+  otherRepos,
+}: propsRepos) => {
   return (
     <>
       <Container
@@ -85,12 +83,12 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
             Ville Haapamäki
           </Typography>
           <Box>
-            <Link href="https://github.com/Villee00/">
+            <Link href="https://github.com/Villee00/" passHref>
               <IconButton color="primary">
                 <GitHubIcon />
               </IconButton>
             </Link>
-            <Link href="https://www.linkedin.com/in/ville-haapamaki/">
+            <Link href="https://www.linkedin.com/in/ville-haapamaki/" passHref>
               <IconButton color="primary">
                 <LinkedInIcon />
               </IconButton>

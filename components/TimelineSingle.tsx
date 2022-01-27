@@ -9,8 +9,8 @@ import {
 import React from 'react';
 
 interface props {
-  time?: String;
-  content: String;
+  time?: string;
+  content: string;
 }
 
 const TimelineSingle = ({ time, content }: props) => {

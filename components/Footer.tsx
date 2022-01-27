@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -19,12 +19,12 @@ const Footer = () => {
       }}
     >
       <Box>
-        <Link href="https://github.com/Villee00/">
+        <Link href="https://github.com/Villee00/" passHref>
           <IconButton color="primary" size="large">
             <GitHubIcon sx={{ fontSize: 80 }} />
           </IconButton>
         </Link>
-        <Link href="https://www.linkedin.com/in/ville-haapamaki/">
+        <Link href="https://www.linkedin.com/in/ville-haapamaki/" passHref>
           <IconButton color="primary" size="large">
             <LinkedInIcon sx={{ fontSize: 80 }} />
           </IconButton>

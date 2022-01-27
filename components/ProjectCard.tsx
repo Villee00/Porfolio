@@ -30,7 +30,7 @@ const ProjectCard = ({ repo }: RepoProps) => {
       elevation={6}
     >
       <CardActionArea>
-        <Link href={repo.html_url}>
+        <Link href={repo.html_url} passHref>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {repo.name}
