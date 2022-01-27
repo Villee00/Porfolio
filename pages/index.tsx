@@ -96,7 +96,7 @@ const Home: React.FC<propsRepos> = ({
           </Box>
           <Box>
             <Typography variant="h5" component="h2" color="text.primary">
-              Software developer
+              Software Developer
             </Typography>
           </Box>
         </Box>
