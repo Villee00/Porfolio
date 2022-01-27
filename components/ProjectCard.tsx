@@ -51,8 +51,8 @@ const ProjectCard = ({ repo }: RepoProps) => {
               ))}
             </Box>
             <Typography variant="body2">
-              Updated on:{' '}
-              {`${updateDate.getDate()}.${updateDate.getMonth()}.${updateDate.getFullYear()}`}
+              Updated on:
+              {` ${updateDate.getDate()}.${updateDate.getMonth()}.${updateDate.getFullYear()}`}
             </Typography>
             <Typography variant="body2">Created on: {dateFormat}</Typography>
           </CardContent>

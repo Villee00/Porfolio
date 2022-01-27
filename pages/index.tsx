@@ -15,25 +15,36 @@ import animations from '../styles/animations.module.css';
 import { GithubRepo } from '../types';
 import Navigation from '../components/Navigation';
 import ContactForm from '../components/ContactForm';
+import RecentProjectCard from '../components/RecentProjectCard';
 
+const recentProjects = ['Villee00/F1-history'];
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://api.github.com/users/Villee00/repos', {
-    Accept: 'application/vnd.github.v3+json',
-  });
-  const data = await res.json();
-
+  const res = await fetch(
+    'https://api.github.com/users/Villee00/repos?sort=created',
+    {
+      Accept: 'application/vnd.github.v3+json',
+    }
+  );
+  const data: GithubRepo[] = await res.json();
+  const recentRepos = data.filter((repo) =>
+    recentProjects.includes(repo.full_name)
+  );
+  const otherRepos = data.filter(
+    (repo) => !recentProjects.includes(repo.full_name)
+  );
   return {
     props: {
-      repos: data,
+      recentRepos,
+      otherRepos,
     },
   };
 };
 
 interface propsRepos {
-  repos: GithubRepo[];
+  recentRepos: GithubRepo[];
+  otherRepos: GithubRepo[];
 }
-const Home: NextPage = ({ repos }: propsRepos) => {
-  const test = 'test';
+const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
   return (
     <>
       <Navigation />
@@ -89,7 +100,15 @@ const Home: NextPage = ({ repos }: propsRepos) => {
         </Box>
         <Box>
           <Typography variant="h2" component="h3">
-            Projects
+            Most recent projects
+          </Typography>
+          {recentRepos.map((repo) => (
+            <RecentProjectCard repo={repo} />
+          ))}
+        </Box>
+        <Box bgcolor="secondary.main">
+          <Typography variant="h2" component="h3">
+            Other projects
           </Typography>
         </Box>
         <Box
@@ -100,7 +119,7 @@ const Home: NextPage = ({ repos }: propsRepos) => {
             alignItems: 'center',
           }}
         >
-          {repos.map((repo) => (
+          {otherRepos.map((repo) => (
             <ProjectCard key={repo.id} repo={repo} />
           ))}
         </Box>
