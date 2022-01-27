@@ -14,10 +14,10 @@ import ProjectCard from '../components/ProjectCard';
 import animations from '../styles/animations.module.css';
 import { GithubRepo } from '../types';
 import Navigation from '../components/Navigation';
-import ContactForm from '../components/ContactForm';
 import RecentProjectCard from '../components/RecentProjectCard';
+import Footer from '../components/Footer';
 
-const recentProjects = ['Villee00/F1-history'];
+const recentProjects = ['Villee00/F1-history', 'Villee00/Porfolio'];
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     'https://api.github.com/users/Villee00/repos?sort=created',
@@ -56,13 +56,14 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
         }}
       >
         <Box
+          id="Home"
           sx={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             textAlign: 'center',
             alignItems: 'center',
-            height: 500,
+            height: 800,
           }}
         >
           <Avatar
@@ -98,32 +99,41 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
             </Typography>
           </Box>
         </Box>
-        <Box>
+        <Box id="Projects" component={Paper} elevation={2} sx={{ mb: 2 }}>
           <Typography variant="h2" component="h3">
             Most recent projects
           </Typography>
-          {recentRepos.map((repo) => (
-            <RecentProjectCard repo={repo} />
-          ))}
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            {recentRepos.map((repo) => (
+              <RecentProjectCard repo={repo} />
+            ))}
+          </Box>
         </Box>
-        <Box bgcolor="secondary.main">
-          <Typography variant="h2" component="h3">
+        <Box component={Paper} elevation={2}>
+          <Typography variant="h3" component="h4">
             Other projects
           </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            {otherRepos.map((repo) => (
+              <ProjectCard key={repo.id} repo={repo} />
+            ))}
+          </Box>
         </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          {otherRepos.map((repo) => (
-            <ProjectCard key={repo.id} repo={repo} />
-          ))}
-        </Box>
-        <ContactForm />
+        <Footer />
       </Container>
     </>
   );

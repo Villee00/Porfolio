@@ -17,7 +17,9 @@ interface RepoProps {
 const ProjectCard = ({ repo }: RepoProps) => {
   const createDate = new Date(repo.created_at);
   const updateDate = new Date(repo.updated_at);
-  const dateFormat = `${createDate.getDate()}.${createDate.getMonth()}.${createDate.getFullYear()}`;
+  const dateFormat = `${createDate.getDate()}.${
+    createDate.getMonth() + 1
+  }.${createDate.getFullYear()}`;
   return (
     <Card
       sx={{
@@ -52,7 +54,9 @@ const ProjectCard = ({ repo }: RepoProps) => {
             </Box>
             <Typography variant="body2">
               Updated on:
-              {` ${updateDate.getDate()}.${updateDate.getMonth()}.${updateDate.getFullYear()}`}
+              {` ${updateDate.getDate()}.${
+                updateDate.getMonth() + 1
+              }.${updateDate.getFullYear()}`}
             </Typography>
             <Typography variant="body2">Created on: {dateFormat}</Typography>
           </CardContent>

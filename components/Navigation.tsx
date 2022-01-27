@@ -7,8 +7,16 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
+import { Button } from '@mui/material';
 
 const pages = ['Home', 'Projects', 'Contact'];
 
@@ -26,7 +34,7 @@ const Navigation = () => {
   };
 
   return (
-    <AppBar position="static" color="transparent" position="sticky">
+    <AppBar position="static" color="default" position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -73,13 +81,16 @@ const Navigation = () => {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                {page}
-              </Button>
+              <Box sx={{ my: 2 }}>
+                <Link key={page} to={page} smooth={true} duration={400}>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ color: 'black', display: 'block' }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
+              </Box>
             ))}
           </Box>
         </Toolbar>
