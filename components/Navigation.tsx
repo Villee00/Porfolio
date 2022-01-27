@@ -76,8 +76,8 @@ const Navigation = () => {
             }}
           >
             {pages.map((page) => (
-              <Box sx={{ my: 2 }}>
-                <Link key={page} to={page} smooth={true} duration={500}>
+              <Box key={page} sx={{ my: 2 }}>
+                <Link to={page} smooth={true} duration={500}>
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ color: 'text.primary', display: 'block' }}

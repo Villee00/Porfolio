@@ -119,13 +119,13 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
             }}
           >
             {recentRepos.map((repo) => (
-              <RecentProjectCard repo={repo} />
+              <RecentProjectCard key={repo.id} repo={repo} />
             ))}
           </Box>
         </Box>
         <Box component={Paper} elevation={2} p={1}>
-          <Typography variant="h3" component="h4">
-            Other projects
+          <Typography variant="h4" component="h4">
+            Other project/course repositories
           </Typography>
           <Box
             sx={{

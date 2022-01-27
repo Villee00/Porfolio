@@ -27,8 +27,6 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
             alt="Project screenshot"
             objectFit="cover"
             layout="fill"
-            width={200}
-            height={200}
           />
         </div>
       </CardMedia>

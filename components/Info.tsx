@@ -33,9 +33,9 @@ const Info = () => {
           />
           <Typography variant="h2">Who am I?</Typography>
           <Typography variant="body1">
-            I’m a second-year student at Metropolia UAS. I started programming
-            on 2016 with Unity and fell in love with programming. After that I
-            have done multiple projects with different languages and frameworks.
+            I started programming in 2016 with Unity and fell in love with
+            programming. After that, I have done multiple projects with
+            different languages and frameworks.{' '}
           </Typography>
         </Box>
         <Box sx={{ width: 500 }}>
