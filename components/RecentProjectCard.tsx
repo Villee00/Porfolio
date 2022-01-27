@@ -10,7 +10,6 @@ import {
 import Image from 'next/image';
 import React from 'react';
 import { GithubRepo } from '../types';
-import pic from '../assets/F1-history.png';
 
 interface RepoProps {
   repo: GithubRepo;
@@ -26,8 +25,10 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
           <Image
             src={`/${repo.name.replace('-', '')}.png`}
             alt="Project screenshot"
-            layout="fill"
             objectFit="cover"
+            layout="fill"
+            width={200}
+            height={200}
           />
         </div>
       </CardMedia>
@@ -52,7 +53,6 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
             />
           ))}
         </Box>
-        {/* TODO: Change format */}
         <Typography variant="body2">
           Updated on:
           {` ${updateDate.getDate()}.${

@@ -17,6 +17,8 @@ import Navigation from '../components/Navigation';
 import RecentProjectCard from '../components/RecentProjectCard';
 import Footer from '../components/Footer';
 import Info from '../components/Info';
+import { Timeline } from '@mui/lab';
+import TimelineSingle from '../components/TimelineSingle';
 
 const recentProjects = ['Villee00/F1-history', 'Villee00/Porfolio'];
 export const getStaticProps: GetStaticProps = async () => {
@@ -64,7 +66,7 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
             justifyContent: 'center',
             textAlign: 'center',
             alignItems: 'center',
-            height: 800,
+            height: 850,
           }}
         >
           <Avatar
@@ -96,7 +98,7 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
           </Box>
           <Box>
             <Typography variant="h5" component="h2" color="text.primary">
-              Software developer student year 2 at Metropolia UAS
+              Software developer
             </Typography>
           </Box>
         </Box>
@@ -104,7 +106,7 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
         <Box>
           <Info />
         </Box>
-        <Box id="Projects" component={Paper} elevation={2} sx={{ mb: 2 }}>
+        <Box id="Projects" component={Paper} elevation={2} sx={{ mb: 2, p: 2 }}>
           <Typography variant="h2" component="h3">
             Most recent projects
           </Typography>
@@ -121,7 +123,7 @@ const Home: NextPage = ({ recentRepos, otherRepos }: propsRepos) => {
             ))}
           </Box>
         </Box>
-        <Box component={Paper} elevation={2}>
+        <Box component={Paper} elevation={2} p={1}>
           <Typography variant="h3" component="h4">
             Other projects
           </Typography>

@@ -8,17 +8,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from 'react-scroll';
+import { Link } from 'react-scroll';
 import { Button } from '@mui/material';
 
-const pages = ['Home', 'Projects', 'Contact'];
+const pages = ['Home', 'About', 'Projects'];
 
 const Navigation = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -84,7 +77,7 @@ const Navigation = () => {
           >
             {pages.map((page) => (
               <Box sx={{ my: 2 }}>
-                <Link key={page} to={page} smooth={true} duration={400}>
+                <Link key={page} to={page} smooth={true} duration={500}>
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ color: 'text.primary', display: 'block' }}
