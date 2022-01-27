@@ -42,7 +42,12 @@ const ProjectCard = ({ repo }: RepoProps) => {
                 <Typography variant="body2">Topics:</Typography>
               ) : null}
               {repo.topics.map((topic) => (
-                <Chip variant="outlined" label={topic} sx={{ m: 0.5 }} />
+                <Chip
+                  key={topic}
+                  variant="outlined"
+                  label={topic}
+                  sx={{ m: 0.5 }}
+                />
               ))}
             </Box>
             <Typography variant="body2">

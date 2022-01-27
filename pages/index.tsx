@@ -13,6 +13,8 @@ import Link from 'next/link';
 import ProjectCard from '../components/ProjectCard';
 import animations from '../styles/animations.module.css';
 import { GithubRepo } from '../types';
+import Navigation from '../components/Navigation';
+import ContactForm from '../components/ContactForm';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.github.com/users/Villee00/repos', {
@@ -33,74 +35,78 @@ interface propsRepos {
 const Home: NextPage = ({ repos }: propsRepos) => {
   const test = 'test';
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        justifyContent: 'center',
-        textAlign: 'center',
-      }}
-    >
-      <Box
+    <>
+      <Navigation />
+      <Container
+        maxWidth="lg"
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
           justifyContent: 'center',
           textAlign: 'center',
-          alignItems: 'center',
-          height: 500,
         }}
       >
-        <Avatar
-          className={animations.upDownAnimation}
+        <Box
           sx={{
-            height: 100,
-            width: 100,
-            mb: 1,
-            border: 1,
-            borderColor: 'secondary.main',
-            borderWidth: 4,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            textAlign: 'center',
+            alignItems: 'center',
+            height: 500,
           }}
-          src="https://avatars.githubusercontent.com/u/22426370"
-        />
-        <Typography variant="h4" component="h1">
-          Ville Haapamäki
-        </Typography>
-        <Box>
-          <Link href="https://github.com/Villee00/">
-            <IconButton color="primary">
-              <GitHubIcon />
-            </IconButton>
-          </Link>
-          <Link href="https://www.linkedin.com/in/ville-haapamaki/">
-            <IconButton color="primary">
-              <LinkedInIcon />
-            </IconButton>
-          </Link>
+        >
+          <Avatar
+            className={animations.upDownAnimation}
+            sx={{
+              height: 100,
+              width: 100,
+              mb: 1,
+              border: 1,
+              borderColor: 'secondary.main',
+              borderWidth: 4,
+            }}
+            src="https://avatars.githubusercontent.com/u/22426370"
+          />
+          <Typography variant="h4" component="h1">
+            Ville Haapamäki
+          </Typography>
+          <Box>
+            <Link href="https://github.com/Villee00/">
+              <IconButton color="primary">
+                <GitHubIcon />
+              </IconButton>
+            </Link>
+            <Link href="https://www.linkedin.com/in/ville-haapamaki/">
+              <IconButton color="primary">
+                <LinkedInIcon />
+              </IconButton>
+            </Link>
+          </Box>
+          <Box>
+            <Typography variant="h5" component="h2">
+              Fullstack developer
+            </Typography>
+          </Box>
         </Box>
         <Box>
-          <Typography variant="h5" component="h2">
-            Fullstack developer
+          <Typography variant="h2" component="h3">
+            Projects
           </Typography>
         </Box>
-      </Box>
-      <Box>
-        <Typography variant="h2" component="h3">
-          Projects
-        </Typography>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        {repos.map((repo) => (
-          <ProjectCard key={repo.id} repo={repo} />
-        ))}
-      </Box>
-    </Container>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {repos.map((repo) => (
+            <ProjectCard key={repo.id} repo={repo} />
+          ))}
+        </Box>
+        <ContactForm />
+      </Container>
+    </>
   );
 };
 
