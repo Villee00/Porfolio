@@ -6,9 +6,6 @@ import TimelineSingle from './TimelineSingle';
 const Info = () => {
   return (
     <>
-      <Typography variant="h3" sx={{ mt: 5 }}>
-        About
-      </Typography>
       <Box
         id="About"
         sx={{
@@ -34,10 +31,10 @@ const Info = () => {
           />
           <Typography variant="h2">Who am I?</Typography>
           <Typography variant="body1">
-            I&apos;m a 21-year-old developer living in Helsinki, Finland. I
-            started my developer career in 2016 with Unity and fell in love with
-            programming. After that, I have done multiple projects with
-            different languages and frameworks.
+            I&apos;m a 21-year-old second-year student at Metropolia UAS in
+            Helsinki majoring in Software Engineering. I started my programming
+            career in 2016 and it became my passion instantly. After that, I
+            have done multiple projects with different languages and frameworks.
           </Typography>
         </Box>
         <Box sx={{ width: 500 }}>
@@ -52,23 +49,19 @@ const Info = () => {
             />
             <TimelineSingle
               time="2018"
-              content="Programmed mostly with C# .NET WinForms, Console programs and Unity projects"
-            />
-            <TimelineSingle
-              time=""
-              content="Attended Open University courses on Data Networks at University of Jyväskylä "
+              content="Programmed mostly with C# .NET Forms, Console programs and Unity projects"
             />
             <TimelineSingle
               time="2019"
-              content="Internship at Aditro Oy Jyvaskyla where I worked mostly with ASP.NET. But most importantly got to experience working as a programmer for a big company."
+              content="Internship at Aditro Oy Jyväskylä where I worked mostly with ASP.Net/C#. But most importantly got to experience working as a programmer for a big company."
             />
             <TimelineSingle
               time=""
-              content="Started to learn and make different bots more with Python"
+              content="I started learning Python and making different applications with it"
             />
             <TimelineSingle
               time=""
-              content="Graduated from Lukio and Vocational school with vocational subjects GPA. 3.0/3.0  "
+              content="Graduated from Lyseon lukio and Vocational school with vocational subjects GPA. 3.0/3.0  "
             />
             <TimelineSingle
               time="2020"
@@ -76,15 +69,15 @@ const Info = () => {
             />
             <TimelineSingle
               time="2021"
-              content="Orientation to Software Engineering at Metropolia UAS, first year GPA. 5.0/5.0"
+              content="Majoring in Software Engineering at Metropolia UAS. First year GPA. 5.0/5.0"
             />
             <TimelineSingle
               time=""
-              content="Attended Open University course Full Stack Open (10 ECTS) at University of Helsinki where I learned a lot about Web development"
+              content="Attended Open University course Full Stack Open (11 ECTS) + Full Stack project (10 ECTS) at University of Helsinki where I learned a lot about Web development"
             />
             <TimelineSingle
               time=""
-              content="Started to make Full stack Web applications with Node.js and React"
+              content="Started making Full stack Web applications"
             />
             <TimelineSingle time="2022" content="Continuing..." />
           </Timeline>

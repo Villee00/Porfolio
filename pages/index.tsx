@@ -18,7 +18,7 @@ import RecentProjectCard from '../components/RecentProjectCard';
 import Footer from '../components/Footer';
 import Info from '../components/Info';
 
-const recentProjects = ['Villee00/F1-history', 'Villee00/Porfolio'];
+const recentProjects = ['Villee00/F1-history', 'Villee00/Portfolio'];
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     'https://api.github.com/users/Villee00/repos?sort=created&accept=application/vnd.github.v3+json'
@@ -104,7 +104,12 @@ const Home: React.FC<propsRepos> = ({
         <Box>
           <Info />
         </Box>
-        <Box id="Projects" component={Paper} elevation={2} sx={{ mb: 2, p: 2 }}>
+        <Box
+          id="Projects"
+          component={Paper}
+          elevation={2}
+          sx={{ mb: 2, p: 2, alignItems: 'stretch' }}
+        >
           <Typography variant="h2" component="h3">
             Most recent projects
           </Typography>
@@ -113,7 +118,7 @@ const Home: React.FC<propsRepos> = ({
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'center',
-              alignItems: 'center',
+              alignItems: 'stretch',
             }}
           >
             {recentRepos.map((repo) => (

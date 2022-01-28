@@ -26,10 +26,11 @@ const ProjectCard = ({ repo }: RepoProps) => {
         width: 345,
         alignContent: 'center',
         m: 2,
+        alignSelf: 'stretch',
       }}
       elevation={6}
     >
-      <CardActionArea>
+      <CardActionArea sx={{ width: '100%', height: '100%' }}>
         <Link href={repo.html_url} passHref>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">

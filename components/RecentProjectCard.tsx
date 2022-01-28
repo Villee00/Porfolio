@@ -33,7 +33,14 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
           />
         </div>
       </CardMedia>
-      <CardContent sx={{ flex: '1 0 auto', width: 300, flexWrap: 'wrap' }}>
+      <CardContent
+        sx={{
+          flex: '1 0 auto',
+          alignSelf: 'center',
+          width: 300,
+          flexWrap: 'wrap',
+        }}
+      >
         <Typography component="div" variant="h5">
           {repo.name}
         </Typography>
