@@ -13,7 +13,6 @@ const Info = () => {
         id="About"
         sx={{
           display: 'flex',
-          alignItems: 'center',
           mt: 5,
           mb: 5,
           flexWrap: 'wrap',
@@ -25,6 +24,8 @@ const Info = () => {
             width: 350,
             justifyContent: 'center',
             height: '100%',
+            position: 'sticky',
+            top: 100,
           }}
         >
           <Avatar
@@ -33,9 +34,10 @@ const Info = () => {
           />
           <Typography variant="h2">Who am I?</Typography>
           <Typography variant="body1">
-            I started programming in 2016 with Unity and fell in love with
-            programming. After that, I have done multiple projects with
-            different languages and frameworks.{' '}
+            I'm a 21-year-old developer in Helsinki, Finland. I started
+            programming in 2016 with Unity and fell in love with programming.
+            After that, I have done multiple projects with different languages
+            and frameworks.
           </Typography>
         </Box>
         <Box sx={{ width: 500 }}>
@@ -70,7 +72,7 @@ const Info = () => {
             />
             <TimelineSingle
               time="2020"
-              content="Started school at Metropolia UAS and did diffrent projects with Java, C and JavaScript"
+              content="Started school at Metropolia UAS and did different projects with Java, C and JavaScript"
             />
             <TimelineSingle
               time="2021"

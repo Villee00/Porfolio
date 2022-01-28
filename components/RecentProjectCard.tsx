@@ -4,12 +4,15 @@ import {
   CardContent,
   CardMedia,
   Chip,
+  IconButton,
   Link,
   Typography,
 } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import { GithubRepo } from '../types';
+import PublicIcon from '@mui/icons-material/Public';
+import GitHub from '@mui/icons-material/GitHub';
 
 interface RepoProps {
   repo: GithubRepo;
@@ -63,7 +66,20 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
             createDate.getMonth() + 1
           }.${createDate.getFullYear()}`}
         </Typography>
-        {repo.homepage ? <Link href={repo.homepage}>Website</Link> : null}
+        <Box sx={{ pt: 1 }}>
+          <Link href={repo.html_url}>
+            <IconButton>
+              <GitHub />
+            </IconButton>
+          </Link>
+          {repo.homepage ? (
+            <Link href={repo.homepage}>
+              <IconButton>
+                <PublicIcon />
+              </IconButton>
+            </Link>
+          ) : null}
+        </Box>
       </CardContent>
     </Card>
   );
