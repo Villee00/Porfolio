@@ -34,10 +34,10 @@ const Info = () => {
           />
           <Typography variant="h2">Who am I?</Typography>
           <Typography variant="body1">
-            I&apos;m a 21-year-old developer in Helsinki, Finland. I started
-            programming in 2016 with Unity and fell in love with programming.
-            After that, I have done multiple projects with different languages
-            and frameworks.
+            I&apos;m a 21-year-old developer living in Helsinki, Finland. I
+            started my developer career in 2016 with Unity and fell in love with
+            programming. After that, I have done multiple projects with
+            different languages and frameworks.
           </Typography>
         </Box>
         <Box sx={{ width: 500 }}>
