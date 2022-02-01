@@ -10,13 +10,19 @@ import type { GetStaticProps } from 'next';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from 'next/link';
-import ProjectCard from '../components/ProjectCard';
+import ProjectCard from '../components/otherProjects/ProjectCard';
 import animations from '../styles/animations.module.css';
 import { GithubRepo } from '../types';
-import Navigation from '../components/Navigation';
-import RecentProjectCard from '../components/RecentProjectCard';
-import Footer from '../components/Footer';
-import Info from '../components/Info';
+import Navigation from '../components/common/Navigation';
+import RecentProjectCard from '../components/recentProjects/RecentProjectCard';
+import Footer from '../components/common/Footer';
+import Info from '../components/info/Info';
+import SkillsetCard from '../components/skillset/SkillsetCard';
+import StorageIcon from '@mui/icons-material/Storage';
+import CodeIcon from '@mui/icons-material/Code';
+import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
+import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
+import WebIcon from '@mui/icons-material/Web';
 
 const recentProjects = ['Villee00/F1-history', 'Villee00/Portfolio'];
 export const getStaticProps: GetStaticProps = async () => {
@@ -103,6 +109,16 @@ const Home: React.FC<propsRepos> = ({
         <Navigation />
         <Box>
           <Info />
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+          <SkillsetCard icon={<StorageIcon />} category="Databases" />
+          <SkillsetCard icon={<CodeIcon />} category="Languages" />
+          <SkillsetCard icon={<DisplaySettingsIcon />} category="IDES" />
+          <SkillsetCard icon={<StorageIcon />} category="Databases" />
+
+          <SkillsetCard icon={<WebIcon />} category="Front-end" />
+          <SkillsetCard icon={<DnsOutlinedIcon />} category="Back-end" />
+          <SkillsetCard icon={<StorageIcon />} category="Databases" />
         </Box>
         <Box
           id="Projects"
