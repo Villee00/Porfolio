@@ -1,12 +1,13 @@
-import { Fade, Grow } from '@mui/material';
-import React, { ReactComponentElement, useState } from 'react';
+import { Grow } from '@mui/material';
+import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 
-const FadeIn: React.FC<{}> = ({ children }) => {
+const FadeIn = ({ children }: any) => {
   const [visible, setVisible] = useState(false);
-  const onChange = (isVisible) => {
+  const onChange = (isVisible: boolean) => {
     setVisible(isVisible);
   };
+  console.log(typeof children);
   return (
     <VisibilitySensor
       partialVisibility
@@ -16,6 +17,6 @@ const FadeIn: React.FC<{}> = ({ children }) => {
       <Grow in={visible}>{children}</Grow>
     </VisibilitySensor>
   );
-};
+}; // eslint-disable-line no-use-before-define
 
 export default FadeIn;

@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="icon" href="/icon.png" />
-        <title>Ville Haapamäki | Full-Stack Web Developer</title>
+        <title>Ville Haapamäki | Web Developer</title>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

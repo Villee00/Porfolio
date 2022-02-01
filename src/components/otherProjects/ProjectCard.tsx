@@ -4,13 +4,11 @@ import {
   CardActionArea,
   CardContent,
   Chip,
-  Fade,
   Typography,
 } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
-import { GithubRepo } from '../../types';
+import { GithubRepo } from '../../../types';
 import FadeIn from '../common/FadeIn';
 
 interface RepoProps {
@@ -19,7 +17,7 @@ interface RepoProps {
 
 const ProjectCard = ({ repo }: RepoProps) => {
   const createDate = new Date(repo.created_at);
-  const updateDate = new Date(repo.updated_at);
+  const updateDate = new Date(repo.pushed_at);
   const dateFormat = `${createDate.getDate()}.${
     createDate.getMonth() + 1
   }.${createDate.getFullYear()}`;

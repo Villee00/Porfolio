@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import { GithubRepo } from '../../types';
+import { GithubRepo } from '../../../types';
 import PublicIcon from '@mui/icons-material/Public';
 import GitHub from '@mui/icons-material/GitHub';
 import FadeIn from '../common/FadeIn';
@@ -21,7 +21,7 @@ interface RepoProps {
 
 const RecentProjectCard = ({ repo }: RepoProps) => {
   const createDate = new Date(repo.created_at);
-  const updateDate = new Date(repo.updated_at);
+  const updateDate = new Date(repo.pushed_at);
   return (
     <FadeIn>
       <Card sx={{ display: 'flex', m: 1, flexWrap: 'wrap' }}>

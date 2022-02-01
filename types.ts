@@ -135,3 +135,26 @@ export enum Type {
 export enum Visibility {
   Public = "public",
 }
+
+export interface ReposProps {
+  repos: GithubRepo[];
+}
+
+export interface Skillset {
+  databases: SkillData[];
+  languages: SkillData[];
+  tools:     SkillData[];
+  web:       Web;
+}
+
+export interface SkillData {
+  id:        number;
+  value:     string;
+  secondary?: string;
+}
+
+export interface Web {
+  frontend: SkillData[];
+  backend:  SkillData[];
+}
+

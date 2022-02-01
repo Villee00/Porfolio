@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-scroll';
 import { Button } from '@mui/material';
 
-const pages = ['Home', 'About', 'Projects'];
+const pages = ['Home', 'About', 'Skills', 'Projects'];
 
 const Navigation = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -77,7 +77,7 @@ const Navigation = () => {
           >
             {pages.map((page) => (
               <Box key={page} sx={{ my: 2 }}>
-                <Link to={page} smooth={true} duration={500}>
+                <Link to={page} smooth={true} duration={500} offset={-75}>
                   <Button
                     onClick={handleCloseNavMenu}
                     sx={{ color: 'text.primary', display: 'block' }}
