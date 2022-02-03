@@ -26,6 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href="/icon.png" />
         <title>Ville Haapamäki | Web Developer</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Portfolio of Ville Haapamäki" />
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

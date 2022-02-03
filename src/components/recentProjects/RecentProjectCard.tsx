@@ -81,13 +81,13 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
           </Typography>
           <Box sx={{ pt: 1 }}>
             <Link href={repo.html_url}>
-              <IconButton color="primary">
+              <IconButton aria-label="GitHub" color="primary">
                 <GitHub />
               </IconButton>
             </Link>
             {repo.homepage ? (
               <Link href={repo.homepage}>
-                <IconButton color="primary">
+                <IconButton aria-label="Website" color="primary">
                   <PublicIcon />
                 </IconButton>
               </Link>

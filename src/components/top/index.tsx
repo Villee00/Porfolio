@@ -28,6 +28,7 @@ const TopLinks = () => {
           borderColor: 'secondary.main',
           borderWidth: 4,
         }}
+        alt="Profile picture"
         src="/Avatar.png"
       />
       <Typography variant="h4" component="h1" color="text.primary">
@@ -35,12 +36,12 @@ const TopLinks = () => {
       </Typography>
       <Box>
         <Link href="https://github.com/Villee00/" passHref>
-          <IconButton color="primary">
+          <IconButton aria-label="GitHub" color="primary">
             <GitHubIcon />
           </IconButton>
         </Link>
         <Link href="https://www.linkedin.com/in/ville-haapamaki/" passHref>
-          <IconButton color="primary">
+          <IconButton aria-label="LinkedIn" color="primary">
             <LinkedInIcon />
           </IconButton>
         </Link>

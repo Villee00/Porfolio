@@ -7,7 +7,6 @@ const FadeIn = ({ children }: any) => {
   const onChange = (isVisible: boolean) => {
     setVisible(isVisible);
   };
-  console.log(typeof children);
   return (
     <VisibilitySensor
       partialVisibility
@@ -17,6 +16,6 @@ const FadeIn = ({ children }: any) => {
       <Grow in={visible}>{children}</Grow>
     </VisibilitySensor>
   );
-}; // eslint-disable-line no-use-before-define
+};
 
 export default FadeIn;

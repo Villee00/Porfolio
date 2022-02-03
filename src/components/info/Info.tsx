@@ -26,6 +26,7 @@ const Info = () => {
       >
         <Avatar
           src="/Avatar.png"
+          alt="Profile picture"
           sx={{ display: 'block', m: 'auto', width: 150, height: 150 }}
         />
         <Typography variant="h2">Who am I?</Typography>

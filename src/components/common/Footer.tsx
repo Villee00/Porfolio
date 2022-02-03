@@ -20,12 +20,12 @@ const Footer = () => {
     >
       <Box>
         <Link href="https://github.com/Villee00/" passHref>
-          <IconButton color="primary" size="large">
+          <IconButton aria-label="GitHub" color="primary" size="large">
             <GitHubIcon sx={{ fontSize: 80 }} />
           </IconButton>
         </Link>
         <Link href="https://www.linkedin.com/in/ville-haapamaki/" passHref>
-          <IconButton color="primary" size="large">
+          <IconButton aria-label="LinkedIn" color="primary" size="large">
             <LinkedInIcon sx={{ fontSize: 80 }} />
           </IconButton>
         </Link>
