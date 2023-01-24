@@ -14,6 +14,7 @@ const Info = () => {
         flexWrap: 'wrap',
         justifyContent: 'center',
       }}
+      test-dataid="infoContainer"
     >
       <Box
         sx={{
@@ -31,14 +32,14 @@ const Info = () => {
         />
         <Typography variant="h2">Who am I?</Typography>
         <Typography variant="body1">
-          I&apos;m a 21-year-old second-year student at Metropolia UAS in
+          I&apos;m a 22-year-old second-year student at Metropolia UAS in
           Helsinki majoring in Software Engineering. I started my programming
           career in 2016 and it became my passion instantly. After that, I have
           done multiple projects with different languages and frameworks.
         </Typography>
       </Box>
       <Box sx={{ width: 500 }}>
-        <Timeline position="right">
+        <Timeline position="right" nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
           <TimelineSingle
             time="2016-2017"
             content="Started making Unity projects with C# and attended game jams"
@@ -79,7 +80,7 @@ const Info = () => {
             time=""
             content="Started making Full stack Web applications"
           />
-          <TimelineSingle time="2022" content="Continuing..." />
+          <TimelineSingle time="2022" content="Started working at Nordea on cards and " />
         </Timeline>
       </Box>
     </Box>

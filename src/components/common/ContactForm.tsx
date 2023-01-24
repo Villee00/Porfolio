@@ -9,6 +9,7 @@ const ContactForm = () => {
         flexDirection: 'column',
         alignContent: 'center',
       }}
+      data-testid="contactForm"
     >
       <form>
         <Typography variant="h2" paragraph={true}>

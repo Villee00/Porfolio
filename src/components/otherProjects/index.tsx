@@ -5,7 +5,7 @@ import ProjectCard from './ProjectCard';
 
 const OtherProjects = ({ repos }: ReposProps) => {
   return (
-    <Box component={Paper} elevation={2} p={1}>
+    <Box component={Paper} elevation={2} p={1} id="otherProjectsContainer">
       <Typography variant="h4" component="h4">
         Other project/course repositories
       </Typography>

@@ -24,7 +24,7 @@ const RecentProjectCard = ({ repo }: RepoProps) => {
   const updateDate = new Date(repo.pushed_at);
   return (
     <FadeIn>
-      <Card sx={{ display: 'flex', m: 1, flexWrap: 'wrap' }}>
+      <Card sx={{ display: 'flex', m: 1, flexWrap: 'wrap' }} data-testid="recentProjectCard">
         <CardMedia sx={{ width: 200 }}>
           <div style={{ position: 'relative', width: '100%', height: '100%' }}>
             <Image
