@@ -10,6 +10,7 @@ const RecentProjects = ({ repos }: ReposProps) => {
       component={Paper}
       elevation={2}
       sx={{ mb: 2, p: 2, alignItems: 'stretch' }}
+      data-testid="recentProjects"
     >
       <Typography variant="h2" component="h3">
         Most recent projects

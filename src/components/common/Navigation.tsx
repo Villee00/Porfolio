@@ -27,7 +27,7 @@ const Navigation = () => {
   };
 
   return (
-    <AppBar color="default" position="sticky">
+    <AppBar color="default" position="sticky" data-testid="navigation">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

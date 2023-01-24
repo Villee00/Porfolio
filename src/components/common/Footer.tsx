@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <Box
       component="footer"
-      id="Contact"
+      data-testid="footer"
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -18,13 +18,13 @@ const Footer = () => {
         height: 200,
       }}
     >
-      <Box>
+      <Box data-testid="contactBox">
         <Link href="https://github.com/Villee00/" passHref>
           <IconButton aria-label="GitHub" color="primary" size="large">
             <GitHubIcon sx={{ fontSize: 80 }} />
           </IconButton>
         </Link>
-        <Link href="https://www.linkedin.com/in/ville-haapamaki/" passHref>
+        <Link href="https://www.linkedin.com/in/ville-haapamaki/" passHref >
           <IconButton aria-label="LinkedIn" color="primary" size="large">
             <LinkedInIcon sx={{ fontSize: 80 }} />
           </IconButton>

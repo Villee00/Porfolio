@@ -20,6 +20,7 @@ const SkillSet = () => {
           flexWrap: 'wrap',
           justifyContent: 'center',
         }}
+        data-testid="SkillsContainer"
       >
         <SkillsetCard
           icon={<StorageIcon />}

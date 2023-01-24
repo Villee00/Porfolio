@@ -8,7 +8,8 @@ import animations from '../../../styles/animations.module.css';
 const TopLinks = () => {
   return (
     <Box
-      id="Home"
+        id="Home"
+        data-testid="home"
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -34,7 +35,7 @@ const TopLinks = () => {
       <Typography variant="h4" component="h1" color="text.primary">
         Ville Haapamäki
       </Typography>
-      <Box>
+      <Box data-testid="contactBox">
         <Link href="https://github.com/Villee00/" passHref>
           <IconButton aria-label="GitHub" color="primary">
             <GitHubIcon />

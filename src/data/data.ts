@@ -57,8 +57,8 @@ export const data =
       },
       {
         id: 4,
-        value: 'Eclipse',
-        secondary: 'Java'
+        value: 'IntelliJ/Webstorm',
+        secondary: 'Java/Web'
       },
       {
         id: 5,
@@ -96,7 +96,11 @@ export const data =
           id: 6,
           value: 'Cypress',
           secondary: 'Tests'
-        }
+        },
+        {
+          id: 7,
+          value: 'Angular'
+        },
       ],
       backend:[
         {
