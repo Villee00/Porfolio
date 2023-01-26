@@ -10,6 +10,7 @@ jobs:
   Run-Tests:
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
@@ -18,7 +19,7 @@ jobs:
       - name: lint
         run: npm run eslint
       - name: start
-        run: npm start
+        runs: npm start
       - name: test
         run: npm run test
       - name: e2e tests
