@@ -19,7 +19,7 @@ jobs:
     - name: lint
       run: npm run eslint
     - name: start
-      runs: npm start
+      run: npm start
     - name: test
       run: npm run test
     - name: e2e tests
