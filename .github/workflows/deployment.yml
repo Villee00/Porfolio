@@ -5,7 +5,12 @@ env:
 on:
   push:
     branches:
-      - main
+      - 'main'
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - 'main'
+
 jobs:
   Run-Tests:
     runs-on: ubuntu-22.04
@@ -17,9 +22,7 @@ jobs:
       - name: npm install
         run: npm install
       - name: lint
-        run: npm run eslint
-      - name: start
-        run: npm start
+        run: npm run lint
       - name: test
         run: npm run test
       - name: e2e tests
@@ -29,7 +32,23 @@ jobs:
           start: npm start
           wait-on: http://localhost:3000
 
+  Deploy-Preview:
+    if: ${{ github.event_name == 'pull_request' }}
+    needs: [Run-Tests]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+
   Deploy-Production:
+    if: ${{ github.event_name == 'push' }}
     needs: [Run-Tests]
     runs-on: ubuntu-latest
     steps:
