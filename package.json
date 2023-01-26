@@ -6,8 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "next lint --fix",
-    "test": "jest --watch",
+    "lint:fix": "next lint --fix",
+    "test": "jest",
+    "test:watch": "jest",
     "e2e": "cypress run",
     "e2e:open": "cypress open"
   },
